@@ -422,4 +422,922 @@ a {
   cursor: pointer;
   position: relative;
   margin-top: 1rem;
-} 
+}
+
+/* Course Section Styles */
+.course-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.course-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.section-subtitle {
+    font-size: 1.3rem;
+    color: var(--gold);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.course-content {
+    width: 100%;
+}
+
+.learning-objectives {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+
+.objectives-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(197, 164, 126, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.objective-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), #d4b48e);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.objective-item:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(197, 164, 126, 0.15);
+}
+
+.objective-item:hover::before {
+    opacity: 1;
+}
+
+.objective-item.expanded {
+    background: linear-gradient(135deg, rgba(197, 164, 126, 0.1) 0%, rgba(255, 255, 255, 0.08) 100%);
+    border: 2px solid rgba(197, 164, 126, 0.3);
+}
+
+.objective-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold), #d4b48e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    box-shadow: 0 5px 15px rgba(197, 164, 126, 0.3);
+    transition: all 0.3s ease;
+}
+
+.objective-item:hover .objective-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 25px rgba(197, 164, 126, 0.4);
+}
+
+.check-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.objective-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.objective-text p {
+    color: var(--light);
+    opacity: 0.9;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.objective-text .main-description {
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.subtopics {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.subtopic-group {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+}
+
+.subtopic-group h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtopic-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subtopic-group li {
+    color: var(--light);
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.subtopic-group li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: bold;
+}
+
+.subtopic-group li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Target Section Styles */
+.target-section {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(40, 40, 40, 0.9));
+    position: relative;
+    overflow: hidden;
+}
+
+.target-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(212, 180, 142, 0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(212, 180, 142, 0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(212, 180, 142, 0.1)"/></svg>');
+    animation: float 20s ease-in-out infinite;
+}
+
+.target-hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.target-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+.target-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.2;
+}
+
+.target-description {
+    margin-bottom: 3rem;
+}
+
+.target-main-text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--light-gray);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.target-main-text strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.target-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.benefit-highlight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(212, 180, 142, 0.2);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.benefit-highlight:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 180, 142, 0.4);
+    box-shadow: 0 10px 30px rgba(212, 180, 142, 0.1);
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold), #d4b48e);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-bg);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.benefit-highlight:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-highlight span {
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.target-cta {
+    text-align: center;
+}
+
+.cta-text {
+    font-size: 1.3rem;
+    color: var(--light-gray);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-text strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.target-button {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    margin-top: 1rem;
+}
+
+/* Video Section Styles */
+.video-section {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(20, 20, 20, 0.9));
+    position: relative;
+    overflow: hidden;
+}
+
+.video-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="30" cy="30" r="2" fill="rgba(212, 180, 142, 0.08)"/><circle cx="70" cy="60" r="1.5" fill="rgba(212, 180, 142, 0.08)"/><circle cx="50" cy="80" r="1" fill="rgba(212, 180, 142, 0.08)"/></svg>');
+    animation: float 25s ease-in-out infinite;
+}
+
+.video-content {
+    position: relative;
+    z-index: 1;
+}
+
+.video-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-info {
+    color: var(--white);
+}
+
+.video-info h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.3;
+}
+
+.video-highlights {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(212, 180, 142, 0.2);
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 180, 142, 0.4);
+    transform: translateX(5px);
+}
+
+.highlight-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gold), #d4b48e);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.highlight-item span {
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.video-cta {
+    text-align: center;
+}
+
+.video-cta-button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
+/* Experts Section Styles */
+.experts-section {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.experts-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1.5" fill="rgba(212, 180, 142, 0.06)"/><circle cx="75" cy="50" r="2" fill="rgba(212, 180, 142, 0.06)"/><circle cx="50" cy="75" r="1" fill="rgba(212, 180, 142, 0.06)"/></svg>');
+    animation: float 30s ease-in-out infinite;
+}
+
+.experts-content {
+    position: relative;
+    z-index: 1;
+}
+
+.experts-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.expert-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(212, 180, 142, 0.2);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.expert-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 180, 142, 0.4);
+    box-shadow: 0 20px 50px rgba(212, 180, 142, 0.1);
+}
+
+.expert-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    position: relative;
+}
+
+.expert-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.expert-card:hover .expert-image img {
+    transform: scale(1.1);
+}
+
+.expert-info h3 {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.expert-title {
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.expert-description {
+    color: var(--light-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.expert-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.credential {
+    background: rgba(212, 180, 142, 0.1);
+    color: var(--gold);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.experts-cta {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 180, 142, 0.15);
+}
+
+.experts-cta h3 {
+    font-size: 2.2rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.experts-cta p {
+    color: var(--light-gray);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.experts-button {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+/* CTA Section Styles */
+.cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="1.5" fill="rgba(212, 180, 142, 0.06)"/><circle cx="75" cy="50" r="2" fill="rgba(212, 180, 142, 0.06)"/><circle cx="50" cy="75" r="1" fill="rgba(212, 180, 142, 0.06)"/></svg>');
+    animation: float 30s ease-in-out infinite;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.cta-subtitle {
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    color: var(--light);
+    opacity: 0.9;
+    margin-bottom: 3rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(197, 164, 126, 0.2);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold);
+}
+
+.benefit-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--gold), #d4b48e);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.1);
+}
+
+.benefit-item span:last-child {
+    color: var(--light);
+    font-weight: 500;
+    text-align: center;
+}
+
+.cta-button-main {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    padding: 1.5rem 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .learning-objectives {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .target-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-section,
+    .target-section,
+    .cta-section {
+        padding: 2rem 0;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    .learning-objectives {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .objectives-column {
+        gap: 1.2rem;
+    }
+    
+    .target-title,
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .objective-item {
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-radius: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .objective-item.expanded {
+        padding: 1.8rem;
+    }
+    
+    .target-main-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+    
+    .target-benefits {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .benefit-highlight {
+        padding: 1.5rem;
+        gap: 1.2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .benefit-icon {
+        width: 45px;
+        height: 45px;
+        align-self: center;
+    }
+    
+    .benefit-highlight span {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .cta-text {
+        font-size: 1.1rem;
+    }
+    
+    .target-button {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+    
+    .video-container {
+        max-width: 100%;
+    }
+    
+    .experts-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .expert-card {
+        padding: 2rem;
+    }
+    
+    .expert-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .expert-info h3 {
+        font-size: 1.6rem;
+    }
+    
+    .expert-title {
+        font-size: 1rem;
+    }
+    
+    .expert-description {
+        font-size: 0.95rem;
+    }
+    
+    .credential {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .experts-cta {
+        padding: 2rem;
+    }
+    
+    .experts-cta h3 {
+        font-size: 1.8rem;
+    }
+    
+    .experts-cta p {
+        font-size: 1.1rem;
+    }
+    
+    .experts-button {
+        font-size: 1rem;
+        padding: 0.9rem 2rem;
+    }
+    
+    .objective-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        align-self: center;
+    }
+    
+    .objective-text h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .objective-text p,
+    .objective-text .main-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .objective-text .main-description {
+        margin-bottom: 1.2rem;
+    }
+    
+    .subtopics {
+        margin-top: 1.2rem;
+        gap: 1.2rem;
+        text-align: left;
+    }
+    
+    .subtopic-group {
+        padding: 1rem;
+        border-radius: 10px;
+        border-left-width: 3px;
+        text-align: left;
+    }
+    
+    .subtopic-group h4 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .subtopic-group li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        padding-left: 1.2rem;
+        line-height: 1.4;
+    }
+    
+    .subtopic-group li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .stats-card {
+        padding: 2rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.2rem;
+        margin: 2rem 0;
+    }
+    
+    .benefit-item {
+        padding: 1.2rem;
+    }
+    
+    .cta-button-main {
+        padding: 1.2rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .target-item:hover,
+    .objective-item:hover {
+        transform: none;
+    }
+    
+    .objective-item:hover .objective-icon {
+        transform: scale(1.05);
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
